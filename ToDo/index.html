@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <title>ToDo</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+</head>
+<body>
+   <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div id="todo" class="todo">
+               ...
+              </div>
+              <button id="myButton" class="btn btn-primary mt-4">CLICK</button>
+          </div>
+      </div>
+  </div>
+   
+
+   <script>
+      // get url
+      let url1 = 'https://jsonplaceholder.typicode.com/todos';
+      // fetch url and fabricate fetch train
+      fetch(url1).then(res.json()).then(
+      // expand 3 wagon and iterate the date
+      data => {
+         let i = 0;
+         while (i < data.length) {
+
+            if (data[i].completed) {
+               document.getElementById('todo').innerHTML += `<strike>${data[i].title}</strike><hr>`
+            } else {
+               document.getElementById('todo').innerHTML += `${data[i].title}<hr>`
+            }
+
+            i++;
+         }
+      }
+
+
+
+
+      ).catch((error) => {}
+      // expand 3 wagon and iterate the date
+      //asign data with append and use of a teplate literal
+      // make if clause to show date without and with strikethrough
+
+   </script>
+</body>
+</html>
